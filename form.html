@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="calculate.css">
+    <script src="calculate.js"></script>
+</head>
+<body>
+<div class="row">
+    <div class="column">
+  <form id="total" class="form-style-1" onsubmit="return false;" action="">
+    <ul class="form-style-1">
+      <li><label>Amount of Loan:<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">Enter the total loan amount owed at the beginning of the calculation</span>
+        </div>
+        <input type="number" name="loan_amount" id="loan_amount" required/>
+      </li>
+  
+      <li>
+        <label>Interest Rate:<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">Enter the current interest rate of your student loan</span>
+        </div>
+        <input type="number" name="interest_rate" id="interest_rate" required/>
+      </li>
+      
+      <li>
+        <label>Monthly Payment (dollars):<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">Enter the amount you will pay monthly</span>
+        </div>
+        <input type="number" name="monthly_payment" id="monthly_payment" required/>
+      </li>
+  
+     
+      
+      <li>
+        <label>Include Loan Forgiveness?:</label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">Choose whether you would like forgiveness included in the calculation, this could reduce your overall total loan cost amount</span>
+        </div>
+        <tr>
+          <td><input name = "forgiveness" type="radio" value="forgive_yes" checked>Yes</td>
+          <td><input name = "forgiveness" type="radio" value="forgive_no">No</td>
+        </tr>
+      </li>
+      
+      
+          <li>
+        <label>If you answered yes to include forgiveness, which type of forgiveness?:</label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">Enter what type of forgiveness you want to include in the calculation</span>
+        </div>
+        <tr>
+          <br>
+          <td><input name = "type_forgiveness" type="radio" value="pslf" checked>PSLF (10 years)</td><br>
+          <td><input name = "type_forgiveness" type="radio" value="undergrad">Undergrad (20 years)</td><br>
+          <td><input name = "type_forgiveness" type="radio" value="grad">Graduate (25 years)</td>
+        </tr>
+      </li>
+      
+      
+      
+      <li>
+        <label>If forgiveness is included, how many payments have you made?:<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">Enter the number of payments you have made so far.  The calculator will use this to count towards number of payments if forgiveness is included</span>
+        </div>
+        <input type="number" name="interest_rate" />
+      </li>
+      
+  
+      
+      <li>
+          <input type="submit" value="Calculate Loan Cost" />
+      </li>
+    </ul>
+  </form>
+  </div>
+  <div class="column form-style-1"><h3>Student Loan Cost = $</h3></div>
+  </div>
+  
+  
+  
+  <hr>
+  
+  
+  
+  <div class="row">
+    <div class="column">
+  <form name= "invest_form" id="invest_form" class="form-style-1" onsubmit="return false;" action="">
+    <ul class="form-style-1">
+      <li><label>Principal Amount:<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">This is the amount of loan originally borrowed that was paid off</span>
+        </div>
+        <input type="number" name="principal_amount" id="principal_amount" required/>
+      </li>
+  
+      <li>
+        <label>Interest Amount:<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">This is the amount paid in interest</span>
+        </div>
+        <input type="number" name="interest_amount" id="interest_amount" required/>
+      </li>
+      
+      <li>
+        <label>Total Cost:<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">This is the principal amount + the interest amount paid</span>
+        </div>
+        <input type="number" name="total_cost" id="total_cost" required/>
+      </li>
+      <li>
+        <label>Years To Pay Off:<span class="required">*</span></label>
+        <div class="tooltip"><b style='color:red;'>?</b>
+          <span class="tooltiptext">This is how many years it will take you to pay off your loan</span>
+        </div>
+        <input type="number" name="years_until_paid" id="years_until_paid" required/>
+      </li>
+  
+    
+      
+      <li>
+          <input onclick="calculateTotal()" type="submit" value="Calculate 401K + Loan Cost" />
+      </li>
+    </ul>
+  </form>
+  </div>
+  <div id="401k data vis" class="column form-style-1"><h3>401K Cost + Studen Loan Cost = $</h3></div>
+  </div>
+  
+</body>
+</html>
+  
+  
+  
